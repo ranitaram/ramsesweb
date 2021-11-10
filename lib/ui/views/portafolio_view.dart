@@ -12,7 +12,14 @@ class PortafolioView extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        CustomGradient(),
+        Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: [0.1, 0.5, 0.9],
+                  colors: [Colors.orangeAccent, Colors.blue, Colors.blueGrey])),
+        ),
         Container(
           width: size.width,
           height: size.height,
