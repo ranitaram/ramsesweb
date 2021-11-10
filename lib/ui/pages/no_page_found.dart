@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import 'package:lottie/lottie.dart';
 
 class NoPageFound extends StatelessWidget {
   const NoPageFound({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text(
-          '404 - Pagína no encontrada',
-          style: GoogleFonts.montserratAlternates(
-              fontSize: 55, fontWeight: FontWeight.bold, color: Colors.black),
+    return Expanded(
+      child: Container(
+        width: 600,
+        height: double.infinity,
+        child: Lottie.network(
+          'https://assets8.lottiefiles.com/packages/lf20_afwjhfb2.json',
+          height: 100,
         ),
       ),
     );
