@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
+import 'package:ramses_indalecio_web/buttons/link_text.dart';
 
 class PortafolioView extends StatelessWidget {
   const PortafolioView({Key? key}) : super(key: key);
@@ -27,10 +28,13 @@ class PortafolioView extends StatelessWidget {
                   ),
                 ),
               ),
-              Expanded(
-                child: Container(
-                  width: 600,
-                  height: double.infinity,
+              Container(
+                alignment: Alignment.center,
+                width: 600,
+                height: double.infinity,
+                child: LinkText(
+                  text: 'Proyectos en GitHub',
+                  onpressed: () {},
                 ),
               ),
             ],
