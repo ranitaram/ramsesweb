@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 import 'package:ramses_indalecio_web/buttons/link_text.dart';
-import 'package:ramses_indalecio_web/widgets/links_bart.dart';
 
 class ContactoView extends StatelessWidget {
   const ContactoView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    //final size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
 
     return Stack(
+      alignment: Alignment.bottomCenter,
       children: [
         gradientContact(),
         Container(
@@ -74,6 +74,28 @@ class ContactoView extends StatelessWidget {
                   ),
                 ),
               ),
+            ],
+          ),
+        ),
+        Container(
+          width: size.width,
+          height: 50,
+          color: Colors.transparent,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              LinkText(
+                text: 'Políticas de Privacidad',
+                onpressed: () {},
+              ),
+              LinkText(
+                text: 'Políticas de Cookies',
+                onpressed: () {},
+              ),
+              LinkText(
+                text: 'Políticas de Privacidad para Aplicaciones Movíles',
+                onpressed: () {},
+              )
             ],
           ),
         )

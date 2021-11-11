@@ -45,7 +45,7 @@ class _CustomAppMenuState extends State<CustomAppMenu>
         child: Container(
             padding: EdgeInsets.symmetric(horizontal: 10),
             width: 150,
-            height: isOpen ? 358 : 50, //si esta abierto, en 300 si no, en 50
+            height: isOpen ? 308 : 50, //si esta abierto, en 300 si no, en 50
             color: Colors.black,
             child: Column(
               children: [
@@ -71,10 +71,6 @@ class _CustomAppMenuState extends State<CustomAppMenu>
                       delay: 160,
                       text: 'Contacto',
                       onPressed: () => pageProvider.goTo(4)),
-                  CustomMenuItem(
-                      delay: 160,
-                      text: 'Links Bar',
-                      onPressed: () => pageProvider.goTo(5)),
                   SizedBox(
                     height: 8,
                   )

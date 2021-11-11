@@ -10,7 +10,6 @@ class PageProvider extends ChangeNotifier {
     'portafolio',
     'call of duty',
     'contacto',
-    'links Bar'
   ];
 
   int _currentIndex = 0;

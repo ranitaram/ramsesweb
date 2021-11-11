@@ -9,7 +9,6 @@ import 'package:ramses_indalecio_web/ui/views/call_of_duty_view.dart';
 import 'package:ramses_indalecio_web/ui/views/contacto_view.dart';
 import 'package:ramses_indalecio_web/ui/views/home_view.dart';
 import 'package:ramses_indalecio_web/ui/views/portafolio_view.dart';
-import 'package:ramses_indalecio_web/widgets/links_bart.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -43,7 +42,6 @@ class _HommeBody extends StatelessWidget {
         PortafolioView(),
         CallOfDutyView(),
         ContactoView(),
-        LinksBar()
       ],
     );
     // Container(
