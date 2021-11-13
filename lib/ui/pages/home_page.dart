@@ -10,6 +10,7 @@ import 'package:ramses_indalecio_web/ui/views/call_of_duty_view.dart';
 import 'package:ramses_indalecio_web/ui/views/contacto_view.dart';
 import 'package:ramses_indalecio_web/ui/views/home_view.dart';
 import 'package:ramses_indalecio_web/ui/views/home_view_mobile.dart';
+import 'package:ramses_indalecio_web/ui/views/portafolio_mobile_view.dart';
 import 'package:ramses_indalecio_web/ui/views/portafolio_view.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,7 +21,7 @@ class HomePage extends StatelessWidget {
       body: Container(
         child: Stack(
           children: [
-            (size.width > 950) ? _HommeBody() : _MobileBody(),
+            (size.width > 850) ? _HommeBody() : _MobileBody(),
             Positioned(right: 20, top: 20, child: CustomAppMenu())
           ],
         ),
@@ -37,6 +38,7 @@ class _HommeBody extends StatelessWidget {
     final pageProvider = Provider.of<PageProvider>(context, listen: false);
 
     return PageView(
+      physics: ClampingScrollPhysics(),
       controller: pageProvider.scrollcontroller,
       scrollDirection: Axis.vertical,
       children: [
@@ -60,9 +62,10 @@ class _MobileBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final pageProvider = Provider.of<PageProvider>(context, listen: false);
     return PageView(
+      physics: ClampingScrollPhysics(),
       controller: pageProvider.scrollcontroller,
       scrollDirection: Axis.vertical,
-      children: [HomeMoileView(), AboutMobileView()],
+      children: [HomeMoileView(), AboutMobileView(), PortafolioMobileView()],
     );
   }
 }
