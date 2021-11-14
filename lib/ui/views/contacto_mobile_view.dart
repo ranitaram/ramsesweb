@@ -26,7 +26,7 @@ class ContactoMobileView extends StatelessWidget {
                     children: [
                       Lottie.network(
                         'https://assets2.lottiefiles.com/packages/lf20_MUGYrv.json',
-                        height: 100,
+                        height: 80,
                       ),
                       LinkText(
                         text: 'Twitter',
@@ -45,7 +45,7 @@ class ContactoMobileView extends StatelessWidget {
                     children: [
                       Lottie.network(
                         'https://assets9.lottiefiles.com/packages/lf20_bgHQHE.json',
-                        height: 100,
+                        height: 80,
                       ),
                       LinkText(
                         text: 'Facebook',
@@ -64,7 +64,7 @@ class ContactoMobileView extends StatelessWidget {
                     children: [
                       Lottie.network(
                         'https://assets1.lottiefiles.com/packages/lf20_YXH4Tp.json',
-                        height: 100,
+                        height: 80,
                       ),
                       LinkText(
                         text: 'Email',
@@ -74,45 +74,49 @@ class ContactoMobileView extends StatelessWidget {
                   ),
                 ),
               ),
-            ],
-          ),
-        ),
-        Container(
-          //alignment: Alignment.center,
-          // width: (size.width > 850) ? size.height * 0.07 : null,
-          width: size.width,
-          height: 60,
-          color: Colors.transparent,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Wrap(children: [
-                  LinkText(
-                    text: 'Políticas de Privacidad',
-                    onpressed: () {},
-                  ),
-                ]),
-              ),
-              Expanded(
-                child: Wrap(children: [
-                  LinkText(
-                    text: 'Políticas de Cookies',
-                    onpressed: () {},
-                  ),
-                ]),
-              ),
-              Expanded(
-                child: Wrap(children: [
-                  LinkText(
-                    text: 'Políticas de Privacidad para Aplicaciones Movíles',
-                    onpressed: () {},
-                  ),
-                ]),
+              Container(
+                //alignment: Alignment.center,
+                // width: (size.width > 850) ? size.height * 0.07 : null,
+                width: size.width,
+                height: 90,
+                color: Colors.transparent,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Wrap(children: [
+                        LinkText(
+                          text: 'Políticas de Privacidad',
+                          onpressed: () {},
+                        ),
+                      ]),
+                    ),
+                    Expanded(
+                      child: Wrap(children: [
+                        LinkText(
+                          text: 'Políticas de Cookies',
+                          onpressed: () {},
+                        ),
+                      ]),
+                    ),
+                    Expanded(
+                      child: Wrap(children: [
+                        LinkText(
+                          text:
+                              'Políticas de Privacidad para Aplicaciones Movíles',
+                          onpressed: () {},
+                        ),
+                      ]),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    )
+                  ],
+                ),
               )
             ],
           ),
-        )
+        ),
       ],
     );
   }

@@ -36,6 +36,9 @@ class _MyAppState extends State<MyApp> {
       title: 'Ramses indalecio',
       initialRoute: '/home',
       onGenerateRoute: Flurorutas.router.generator,
+      // theme: ThemeData.light().copyWith(
+      //     scrollbarTheme: ScrollbarThemeData().copyWith(
+      //         thumbColor: MaterialStateProperty.all(Colors.white)))
     );
   }
 }
