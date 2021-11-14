@@ -3,19 +3,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CallOfDutyView extends StatelessWidget {
-  const CallOfDutyView({Key? key}) : super(key: key);
+class CallOfDutyMobileView extends StatelessWidget {
+  const CallOfDutyMobileView({Key? key}) : super(key: key);
 
   get animatedTexts => null;
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Stack(
-      alignment: AlignmentDirectional.center,
+    return Column(
       children: [
-        CustomImageWarzone(size: size),
-        AnimatedTextKit(animatedTexts: animatedTexts),
+        Expanded(
+          child: Container(
+            child: Image(
+              image: AssetImage('warzone.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Container(
+            color: Colors.black,
+            alignment: Alignment.bottomCenter,
+            width: size.width,
+            child: AnimatedTextKit(animatedTexts: animatedTexts)),
       ],
     );
   }
@@ -32,7 +42,7 @@ class CustomImageWarzone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size.width,
+      //width: size.width,
       decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage('warzone.png'), fit: BoxFit.cover)),
@@ -54,8 +64,9 @@ class AnimatedTextKit extends StatelessWidget {
         waveColor: Colors.lightGreen,
         boxBackgroundColor: Colors.black,
         textStyle: GoogleFonts.montserratAlternates(
-            fontSize: 40, fontWeight: FontWeight.bold),
-        boxHeight: 250,
+            fontSize: 35, fontWeight: FontWeight.bold),
+        boxHeight: 240,
+        boxWidth: 400,
       ),
     );
   }

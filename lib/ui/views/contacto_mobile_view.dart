@@ -3,8 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 import 'package:ramses_indalecio_web/buttons/link_text.dart';
 
-class ContactoView extends StatelessWidget {
-  const ContactoView({Key? key}) : super(key: key);
+class ContactoMobileView extends StatelessWidget {
+  const ContactoMobileView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class ContactoView extends StatelessWidget {
       children: [
         gradientContact(),
         Container(
-          child: Row(
+          child: Column(
             children: [
               Expanded(
                 child: Container(

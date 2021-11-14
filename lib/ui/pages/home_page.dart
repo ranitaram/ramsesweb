@@ -7,6 +7,8 @@ import 'package:ramses_indalecio_web/ui/views/about_mobile_view.dart';
 
 import 'package:ramses_indalecio_web/ui/views/about_view.dart';
 import 'package:ramses_indalecio_web/ui/views/call_of_duty_view.dart';
+import 'package:ramses_indalecio_web/ui/views/callofduty_mobile_view.dart';
+import 'package:ramses_indalecio_web/ui/views/contacto_mobile_view.dart';
 import 'package:ramses_indalecio_web/ui/views/contacto_view.dart';
 import 'package:ramses_indalecio_web/ui/views/home_view.dart';
 import 'package:ramses_indalecio_web/ui/views/home_view_mobile.dart';
@@ -65,7 +67,13 @@ class _MobileBody extends StatelessWidget {
       physics: ClampingScrollPhysics(),
       controller: pageProvider.scrollcontroller,
       scrollDirection: Axis.vertical,
-      children: [HomeMoileView(), AboutMobileView(), PortafolioMobileView()],
+      children: [
+        HomeMoileView(),
+        AboutMobileView(),
+        PortafolioMobileView(),
+        CallOfDutyMobileView(),
+        ContactoMobileView()
+      ],
     );
   }
 }
