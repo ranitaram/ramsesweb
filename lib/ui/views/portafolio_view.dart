@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
-import 'package:ramses_indalecio_web/buttons/link_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PortafolioView extends StatelessWidget {
   const PortafolioView({Key? key}) : super(key: key);
@@ -36,14 +36,35 @@ class PortafolioView extends StatelessWidget {
                 ),
               ),
               Container(
-                alignment: Alignment.center,
-                width: 600,
-                height: double.infinity,
-                child: LinkText(
-                  text: 'Proyectos en GitHub',
-                  onpressed: () {},
-                ),
-              ),
+                  alignment: Alignment.center,
+                  width: 600,
+                  height: double.infinity,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Lottie.network(
+                        'https://assets10.lottiefiles.com/packages/lf20_6HFXXE.json',
+                        height: 200,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      ElevatedButton(
+                          onPressed: () async {
+                            const url = 'https://github.com/ranitaram';
+                            if (await canLaunch(url)) {
+                              await launch(url,
+                                  forceSafariVC: true,
+                                  forceWebView: true,
+                                  enableJavaScript: true);
+                            }
+                          },
+                          child: const Text(
+                            'GitHub',
+                            style: TextStyle(fontSize: 16, color: Colors.white),
+                          )),
+                    ],
+                  )),
             ],
           ),
         )

@@ -2,6 +2,8 @@ import 'package:fluro/fluro.dart';
 import 'package:provider/provider.dart';
 import 'package:ramses_indalecio_web/providers/page_provider.dart';
 import 'package:ramses_indalecio_web/ui/pages/home_page.dart';
+import 'package:ramses_indalecio_web/ui/pages/politicas_privacidad_apps.dart';
+//import 'package:universal_html/js.dart';
 
 final homeHandler = Handler(handlerFunc: (context, params) {
   //para que no se mande 2 veces y no exista conflicto
@@ -13,3 +15,9 @@ final homeHandler = Handler(handlerFunc: (context, params) {
     return HomePage();
   }
 });
+
+class AdminHandlers {
+  static Handler politicasmovil = Handler(handlerFunc: (context, params) {
+    return const PoliticaPrivacidadSinopsis();
+  });
+}

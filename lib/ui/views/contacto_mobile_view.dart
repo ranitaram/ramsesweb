@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
+import 'package:ramses_indalecio_web/buttons/custom_outlined_button.dart';
 import 'package:ramses_indalecio_web/buttons/link_text.dart';
 
 class ContactoMobileView extends StatelessWidget {
@@ -78,36 +79,21 @@ class ContactoMobileView extends StatelessWidget {
                 //alignment: Alignment.center,
                 // width: (size.width > 850) ? size.height * 0.07 : null,
                 width: size.width,
-                height: 90,
+                height: 120,
                 color: Colors.transparent,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
-                      child: Wrap(children: [
-                        LinkText(
-                          text: 'Políticas de Privacidad',
-                          onpressed: () {},
-                        ),
-                      ]),
-                    ),
+                        child: CustomOutlinedButton(
+                            onPressed: () {}, text: 'Politicas de Privacidad')),
                     Expanded(
-                      child: Wrap(children: [
-                        LinkText(
-                          text: 'Políticas de Cookies',
-                          onpressed: () {},
-                        ),
-                      ]),
-                    ),
+                        child: CustomOutlinedButton(
+                            onPressed: () {}, text: 'Políticas de Cookies')),
                     Expanded(
-                      child: Wrap(children: [
-                        LinkText(
-                          text:
-                              'Políticas de Privacidad para Aplicaciones Movíles',
-                          onpressed: () {},
-                        ),
-                      ]),
-                    ),
+                        child: CustomOutlinedButton(
+                            onPressed: () {},
+                            text: 'Politicas de Privacidad para Apps Móviles')),
                     SizedBox(
                       height: 10,
                     )

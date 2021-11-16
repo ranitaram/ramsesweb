@@ -10,6 +10,7 @@ class PageProvider extends ChangeNotifier {
     'portafolio',
     'call of duty',
     'contacto',
+    'Politicas de Privacidad para Apps Móviles'
   ];
 
   int _currentIndex = 0;

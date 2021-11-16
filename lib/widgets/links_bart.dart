@@ -17,8 +17,14 @@ class LinksBar extends StatelessWidget {
               text: 'Política de privacidad',
               onpressed: () => print('hola'),
             ),
-            LinkText(text: 'Política de Cookies'),
-            LinkText(text: 'Política de Privacidad para aplicaciones movíles'),
+            LinkText(
+              text: 'Política de Cookies',
+              onpressed: () {},
+            ),
+            LinkText(
+              text: 'Política de Privacidad para aplicaciones movíles',
+              onpressed: () {},
+            ),
           ],
         ));
   }

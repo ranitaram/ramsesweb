@@ -3,9 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class LinkText extends StatefulWidget {
   final String text;
-  final Function? onpressed;
+  final Function onpressed;
 
-  const LinkText({Key? key, required this.text, this.onpressed})
+  const LinkText({Key? key, required this.text, required this.onpressed})
       : super(key: key);
 
   @override
@@ -18,7 +18,7 @@ class _LinkTextState extends State<LinkText> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (widget.onpressed != null) widget.onpressed!();
+        if (widget.onpressed != null) widget.onpressed();
       },
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
