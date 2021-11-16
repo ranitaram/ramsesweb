@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 import 'package:ramses_indalecio_web/buttons/link_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PortafolioMobileView extends StatelessWidget {
   const PortafolioMobileView({Key? key}) : super(key: key);
@@ -35,15 +36,40 @@ class PortafolioMobileView extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                alignment: Alignment.center,
-                //width: 600,
-                //height: double.infinity,
-                child: LinkText(
-                  text: 'Proyectos en GitHub',
-                  onpressed: () {},
-                ),
+              const Text(
+                'Portafolio en GitHub',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
               ),
+              const SizedBox(
+                height: 10,
+              ),
+              Lottie.network(
+                'https://assets10.lottiefiles.com/packages/lf20_6HFXXE.json',
+                height: 130,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                  onPressed: () async {
+                    const url = 'https://github.com/ranitaram';
+                    if (await canLaunch(url)) {
+                      await launch(url,
+                          forceSafariVC: true,
+                          forceWebView: true,
+                          enableJavaScript: true);
+                    }
+                  },
+                  child: const Text(
+                    'GitHub',
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  )),
+              SizedBox(
+                height: 20,
+              )
             ],
           ),
         )

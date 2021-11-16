@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 import 'package:ramses_indalecio_web/buttons/custom_outlined_button.dart';
 import 'package:ramses_indalecio_web/buttons/link_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactoMobileView extends StatelessWidget {
   const ContactoMobileView({Key? key}) : super(key: key);
@@ -27,12 +28,25 @@ class ContactoMobileView extends StatelessWidget {
                     children: [
                       Lottie.network(
                         'https://assets2.lottiefiles.com/packages/lf20_MUGYrv.json',
-                        height: 80,
+                        height: 100,
                       ),
-                      LinkText(
-                        text: 'Twitter',
-                        onpressed: () {},
-                      )
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      ElevatedButton(
+                          onPressed: () async {
+                            const url = 'https://twitter.com/IndalecioRamses';
+                            if (await canLaunch(url)) {
+                              await launch(url,
+                                  forceSafariVC: true,
+                                  forceWebView: true,
+                                  enableJavaScript: true);
+                            }
+                          },
+                          child: const Text(
+                            'Twitter',
+                            style: TextStyle(fontSize: 16, color: Colors.white),
+                          ))
                     ],
                   ),
                 ),
@@ -46,12 +60,22 @@ class ContactoMobileView extends StatelessWidget {
                     children: [
                       Lottie.network(
                         'https://assets9.lottiefiles.com/packages/lf20_bgHQHE.json',
-                        height: 80,
+                        height: 100,
                       ),
-                      LinkText(
-                        text: 'Facebook',
-                        onpressed: () {},
-                      )
+                      ElevatedButton(
+                          onPressed: () async {
+                            const url = 'https://www.facebook.com/ramsesiv';
+                            if (await canLaunch(url)) {
+                              await launch(url,
+                                  forceSafariVC: true,
+                                  forceWebView: true,
+                                  enableJavaScript: true);
+                            }
+                          },
+                          child: const Text(
+                            'Facebook',
+                            style: TextStyle(fontSize: 16, color: Colors.white),
+                          ))
                     ],
                   ),
                 ),
@@ -65,12 +89,24 @@ class ContactoMobileView extends StatelessWidget {
                     children: [
                       Lottie.network(
                         'https://assets1.lottiefiles.com/packages/lf20_YXH4Tp.json',
-                        height: 80,
+                        height: 100,
                       ),
-                      LinkText(
-                        text: 'Email',
-                        onpressed: () {},
-                      )
+                      ElevatedButton(
+                          onPressed: () async {
+                            const toEmail = 'ramses_888@hotmail.com';
+                            const subjetc = 'New Post';
+                            const message =
+                                'Hola amig@!\n\nQue bueno que estás aquí, si tienes alguna pregunta no dudes en mandarme un correo';
+                            final url =
+                                'mailto:$toEmail?subject=${Uri.encodeFull(subjetc)}&body=${Uri.encodeFull(message)}';
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            }
+                          },
+                          child: const Text(
+                            'Email',
+                            style: TextStyle(fontSize: 16, color: Colors.white),
+                          ))
                     ],
                   ),
                 ),
