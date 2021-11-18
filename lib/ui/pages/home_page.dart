@@ -23,8 +23,8 @@ class HomePage extends StatelessWidget {
       body: Container(
         child: Stack(
           children: [
-            (size.width > 850) ? _HommeBody() : _MobileBody(),
-            Positioned(right: 20, top: 20, child: CustomAppMenu())
+            (size.width > 850) ? const _HommeBody() : const _MobileBody(),
+            const Positioned(right: 20, top: 20, child: CustomAppMenu())
           ],
         ),
       ),
@@ -40,10 +40,10 @@ class _HommeBody extends StatelessWidget {
     final pageProvider = Provider.of<PageProvider>(context, listen: false);
 
     return PageView(
-      physics: ClampingScrollPhysics(),
+      physics: const ClampingScrollPhysics(),
       controller: pageProvider.scrollcontroller,
       scrollDirection: Axis.vertical,
-      children: [
+      children: const [
         HomeView(),
         AboutView(),
         PortafolioView(),
@@ -64,10 +64,10 @@ class _MobileBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final pageProvider = Provider.of<PageProvider>(context, listen: false);
     return PageView(
-      physics: ClampingScrollPhysics(),
+      physics: const ClampingScrollPhysics(),
       controller: pageProvider.scrollcontroller,
       scrollDirection: Axis.vertical,
-      children: [
+      children: const [
         HomeMoileView(),
         AboutMobileView(),
         PortafolioMobileView(),

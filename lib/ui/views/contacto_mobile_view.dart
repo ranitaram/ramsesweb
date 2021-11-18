@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 import 'package:ramses_indalecio_web/buttons/custom_outlined_button.dart';
-import 'package:ramses_indalecio_web/buttons/link_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactoMobileView extends StatelessWidget {
@@ -81,7 +80,7 @@ class ContactoMobileView extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: Container(
+                child: SizedBox(
                   // width: 300,
                   height: double.infinity,
                   child: Column(
@@ -128,7 +127,8 @@ class ContactoMobileView extends StatelessWidget {
                             onPressed: () {}, text: 'Políticas de Cookies')),
                     Expanded(
                         child: CustomOutlinedButton(
-                            onPressed: () {},
+                            onPressed: () =>
+                                Navigator.pushNamed(context, '/politicasmovil'),
                             text: 'Politicas de Privacidad para Apps Móviles')),
                     SizedBox(
                       height: 10,
