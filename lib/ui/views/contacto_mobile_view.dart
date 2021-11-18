@@ -14,7 +14,7 @@ class ContactoMobileView extends StatelessWidget {
     return Stack(
       alignment: Alignment.bottomCenter,
       children: [
-        gradientContact(),
+        const gradientContact(),
         Container(
           child: Column(
             children: [
@@ -130,7 +130,7 @@ class ContactoMobileView extends StatelessWidget {
                             onPressed: () =>
                                 Navigator.pushNamed(context, '/politicasmovil'),
                             text: 'Politicas de Privacidad para Apps Móviles')),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     )
                   ],

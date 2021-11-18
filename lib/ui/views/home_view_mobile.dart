@@ -13,19 +13,19 @@ class HomeMoileView extends StatelessWidget {
 
     return Stack(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
-        CustomGradient(),
+        const CustomGradient(),
         Container(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
-            _Titulo(),
-            custom_subtitle(),
+            const _Titulo(),
+            const custom_subtitle(),
             // Container(
             //   padding: EdgeInsets.symmetric(horizontal: 15),
             //   alignment: Alignment.bottomCenter,
@@ -42,11 +42,11 @@ class HomeMoileView extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               alignment: Alignment.center,
               //width: 350,
               //height: double.infinity,
-              child: _CustomCardContainer(),
+              child: const _CustomCardContainer(),
             ),
           ],
         )),
@@ -55,7 +55,7 @@ class HomeMoileView extends StatelessWidget {
   }
 
   BoxDecoration _buildboxhome() {
-    return BoxDecoration(
+    return const BoxDecoration(
       image: DecorationImage(
         image: AssetImage('robot.png'),
         fit: BoxFit.cover,
@@ -79,7 +79,7 @@ class _CustomCardContainer extends StatelessWidget {
         width: 260,
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Expanded(
@@ -106,7 +106,7 @@ class custom_subtitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: FittedBox(
         fit: BoxFit.contain,
         child: Text(

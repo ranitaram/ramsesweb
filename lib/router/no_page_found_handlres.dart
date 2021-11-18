@@ -4,6 +4,6 @@ import 'package:ramses_indalecio_web/ui/pages/no_page_found.dart';
 
 class NoPageFoundHandlres {
   static Handler noPageFound = Handler(handlerFunc: (context, params) {
-    return NoPageFound();
+    return const NoPageFound();
   });
 }

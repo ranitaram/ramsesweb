@@ -20,7 +20,7 @@ class ContactoView extends StatelessWidget {
     return Stack(
       alignment: Alignment.bottomCenter,
       children: [
-        gradientContact(),
+        const gradientContact(),
         Container(
           child: Row(
             children: [
@@ -35,7 +35,7 @@ class ContactoView extends StatelessWidget {
                         'https://assets2.lottiefiles.com/packages/lf20_MUGYrv.json',
                         height: 100,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       ElevatedButton(

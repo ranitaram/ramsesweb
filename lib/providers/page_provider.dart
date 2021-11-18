@@ -15,8 +15,7 @@ class PageProvider extends ChangeNotifier {
   int _currentIndex = 0;
 
   createScrollController(String routeName) {
-    this.scrollcontroller =
-        PageController(initialPage: getPageIndex(routeName));
+    scrollcontroller = PageController(initialPage: getPageIndex(routeName));
     html.document.title =
         _pages[getPageIndex(routeName)]; //cambiar titulo paso1
 
