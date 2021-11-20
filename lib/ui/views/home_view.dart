@@ -20,13 +20,13 @@ class HomeView extends StatelessWidget {
         Container(
           child: Row(
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 15),
-                alignment: Alignment.bottomCenter,
-                width: 350,
-                height: double.infinity,
-                child: _image_development(),
-              ),
+              // Container(
+              //   padding: EdgeInsets.symmetric(horizontal: 15),
+              //   alignment: Alignment.bottomCenter,
+              //   width: 350,
+              //   height: double.infinity,
+              //   child: _image_development(),
+              // ),
               Expanded(
                 child: Container(
                   width: 350,

@@ -1,33 +1,38 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class CallOfDutyMobileView extends StatelessWidget {
   const CallOfDutyMobileView({Key? key}) : super(key: key);
 
-  get animatedTexts => null;
+  String? get youtubeURL => null;
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Column(
+    return Stack(
       children: [
-        Expanded(
-          child: Container(
-            child: Image(
-              image: AssetImage('warzone.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
         Container(
             color: Colors.black,
-            alignment: Alignment.bottomCenter,
-            width: size.width,
-            child: AnimatedTextKit(animatedTexts: animatedTexts)),
+            child: Center(child: CustomYotubePlayer(youtubeURL))),
+        const Positioned(
+          left: 5,
+          bottom: 10,
+          child: Text(
+            'ID DE ACTIVISION: EL PIPILA#7429644',
+            style: TextStyle(color: Colors.blue, fontSize: 12),
+          ),
+        )
       ],
     );
+
+    // Stack(
+    //   alignment: AlignmentDirectional.center,
+    //   children: [
+    //     CustomImageWarzone(size: size),
+    //     AnimatedTextKit(animatedTexts: animatedTexts),
+    //   ],
+    // );
   }
 }
 
@@ -42,7 +47,7 @@ class CustomImageWarzone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //width: size.width,
+      width: size.width,
       decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage('warzone.png'), fit: BoxFit.cover)),
@@ -50,24 +55,43 @@ class CustomImageWarzone extends StatelessWidget {
   }
 }
 
-class AnimatedTextKit extends StatelessWidget {
-  const AnimatedTextKit({Key? key, animatedTexts}) : super(key: key);
+class CustomYotubePlayer extends StatefulWidget {
+  final String? youtubeURL;
+  CustomYotubePlayer(
+    this.youtubeURL,
+  );
+
+  @override
+  _CustomYotubePlayerState createState() => _CustomYotubePlayerState();
+}
+
+class _CustomYotubePlayerState extends State<CustomYotubePlayer> {
+  late YoutubePlayerController _controller;
+
+  @override
+  void initState() {
+    _controller = YoutubePlayerController(
+        initialVideoId: '0E44DClsX5Q',
+        //YoutubePlayerController.convertUrlToId(widget.youtubeURL!)!,
+        params: const YoutubePlayerParams(
+            desktopMode: true,
+            loop: true,
+            showControls: true,
+            color: 'transparent'));
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    //final titleTextStyle = Theme.of(context).textTheme.headline3;
+    final screenSize = MediaQuery.of(context).size;
     return SizedBox(
-      //width: 500,
-      child: TextLiquidFill(
-        textAlign: TextAlign.center,
-        text: 'ID DE ACTIVISION: EL PIPILA#7429644',
-        waveColor: Colors.lightGreen,
-        boxBackgroundColor: Colors.black,
-        textStyle: GoogleFonts.montserratAlternates(
-            fontSize: 35, fontWeight: FontWeight.bold),
-        boxHeight: 240,
-        boxWidth: 400,
-      ),
+      width: 150,
+      height: 250, //kIsWeb ? screenSize.height / 1.13 : screenSize.height,
+      child: YoutubePlayerControllerProvider(
+          controller: _controller,
+          child: YoutubePlayerIFrame(
+            controller: _controller,
+          )),
     );
   }
 }

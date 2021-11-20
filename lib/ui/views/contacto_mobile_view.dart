@@ -27,7 +27,7 @@ class ContactoMobileView extends StatelessWidget {
                     children: [
                       Lottie.network(
                         'https://assets2.lottiefiles.com/packages/lf20_MUGYrv.json',
-                        height: 100,
+                        height: 80,
                       ),
                       const SizedBox(
                         height: 10,
@@ -44,7 +44,7 @@ class ContactoMobileView extends StatelessWidget {
                           },
                           child: const Text(
                             'Twitter',
-                            style: TextStyle(fontSize: 16, color: Colors.white),
+                            style: TextStyle(fontSize: 14, color: Colors.white),
                           ))
                     ],
                   ),
@@ -59,7 +59,7 @@ class ContactoMobileView extends StatelessWidget {
                     children: [
                       Lottie.network(
                         'https://assets9.lottiefiles.com/packages/lf20_bgHQHE.json',
-                        height: 100,
+                        height: 80,
                       ),
                       ElevatedButton(
                           onPressed: () async {
@@ -73,7 +73,7 @@ class ContactoMobileView extends StatelessWidget {
                           },
                           child: const Text(
                             'Facebook',
-                            style: TextStyle(fontSize: 16, color: Colors.white),
+                            style: TextStyle(fontSize: 14, color: Colors.white),
                           ))
                     ],
                   ),
@@ -88,7 +88,7 @@ class ContactoMobileView extends StatelessWidget {
                     children: [
                       Lottie.network(
                         'https://assets1.lottiefiles.com/packages/lf20_YXH4Tp.json',
-                        height: 100,
+                        height: 80,
                       ),
                       ElevatedButton(
                           onPressed: () async {
@@ -104,7 +104,7 @@ class ContactoMobileView extends StatelessWidget {
                           },
                           child: const Text(
                             'Email',
-                            style: TextStyle(fontSize: 16, color: Colors.white),
+                            style: TextStyle(fontSize: 14, color: Colors.white),
                           ))
                     ],
                   ),
@@ -127,9 +127,10 @@ class ContactoMobileView extends StatelessWidget {
                             onPressed: () {}, text: 'Políticas de Cookies')),
                     Expanded(
                         child: CustomOutlinedButton(
-                            onPressed: () =>
-                                Navigator.pushNamed(context, '/politicasmovil'),
-                            text: 'Politicas de Privacidad para Apps Móviles')),
+                      onPressed: () =>
+                          Navigator.pushNamed(context, '/politicasmovil'),
+                      text: 'Politicas de Privacidad para Apps Móviles',
+                    )),
                     const SizedBox(
                       height: 10,
                     )
